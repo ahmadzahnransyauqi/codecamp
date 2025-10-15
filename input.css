@@ -1,0 +1,243 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+:root {
+  --primary-text: #ffffff;
+  --accent-color: rgba(255, 255, 255, 0.25);
+  --bg-dark: rgba(0, 0, 0, 0.4);
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body {
+  color: var(--primary-text);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+  padding-top: 100px; /* Jarak supaya navbar tidak menutupi konten */
+}
+
+/*Navbar */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 900px; /* sedikit dilebarkan agar semua link muat satu baris */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* mencegah turun ke baris berikut */
+  padding: 12px 24px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
+  overflow: hidden; /* cegah konten keluar */
+}
+
+.navbar.scrolled {
+  background: rgba(0,0,0,0.7);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  flex-wrap: nowrap;
+}
+
+.nav-links a {
+  color: var(--primary-text);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.nav-links a.active {
+  background: var(--accent-color);
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+/* Responsive Navbar */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
+/* header */
+.profile-bg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;     
+  text-align: center;
+  background: url('camp-night.jpg') no-repeat center/cover;
+  min-height: 100vh;
+}
+
+.profile-header {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.profile-img {
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+/* CONTENT */
+.content, .profile-section {
+  background: var(--bg-dark);
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 25px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px var(--shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+  color: #f0f0f0;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+p, ol, li {
+  line-height: 1.6;
+}
+/* ANIMASI */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* biodata */
+.biodata {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.biodata th, .biodata td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.biodata th {
+  text-align: left;
+  color: #aee0ff;
+}
+
+.biodata tr:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* skills */
+.skills li {
+  margin: 8px 0;
+}
+
+/* kontak */
+.contact-links a {
+  color: var(--primary-text);
+  text-decoration: none;
+  padding: 10px 18px;
+  margin: 5px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-links a:hover {
+  background: rgba(255,255,255,0.4);
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.7);
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; /* bagian konten utama yang mengisi ruang kosong */
+}
+
+footer {
+  margin-top: auto; /* dorong footer ke bawah */
+}

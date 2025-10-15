@@ -1,0 +1,289 @@
+/*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
+@layer properties;
+.fixed {
+  position: fixed;
+}
+.left-1\/2 {
+  left: calc(1/2 * 100%);
+}
+.z-50 {
+  z-index: 50;
+}
+.flex {
+  display: flex;
+}
+.h-screen {
+  height: 100vh;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-11\/12 {
+  width: calc(11/12 * 100%);
+}
+.-translate-x-1\/2 {
+  --tw-translate-x: calc(calc(1/2 * 100%) * -1);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-center {
+  justify-content: center;
+}
+.rounded-full {
+  border-radius: calc(infinity * 1px);
+}
+.border {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+}
+.border-b-2 {
+  border-bottom-style: var(--tw-border-style);
+  border-bottom-width: 2px;
+}
+.bg-cover {
+  background-size: cover;
+}
+.bg-fixed {
+  background-attachment: fixed;
+}
+.bg-center {
+  background-position: center;
+}
+.text-center {
+  text-align: center;
+}
+.transition {
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+  transition-timing-function: var(--tw-ease, ease);
+  transition-duration: var(--tw-duration, 0s);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+:root {
+  --primary-text: #ffffff;
+  --accent-color: rgba(255, 255, 255, 0.25);
+  --bg-dark: rgba(0, 0, 0, 0.5);
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  color: var(--primary-text);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+  padding-top: 100px;
+}
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 12px 24px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+.navbar.scrolled {
+  background: rgba(0,0,0,0.7);
+}
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  flex-wrap: nowrap;
+}
+.nav-links a {
+  color: var(--primary-text);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.nav-links a:hover {
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+.nav-links a.active {
+  background: var(--accent-color);
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
+.profile-bg {
+  background: url('camp-night.jpg') no-repeat center/cover;
+  min-height: 100vh;
+}
+.profile-header {
+  text-align: center;
+  margin-top: 120px;
+}
+.profile-img {
+  width: 160px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  transition: transform 0.3s ease;
+}
+.profile-img:hover {
+  transform: scale(1.05);
+}
+.content, .profile-section {
+  background: var(--bg-dark);
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 25px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px var(--shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+  color: #f0f0f0;
+}
+h2 {
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+p, ol, li {
+  line-height: 1.6;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.biodata {
+  width: 100%;
+  border-collapse: collapse;
+}
+.biodata th, .biodata td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.biodata th {
+  text-align: left;
+  color: #aee0ff;
+}
+.biodata tr:hover {
+  background: rgba(255,255,255,0.1);
+}
+.skills li {
+  margin: 8px 0;
+}
+.contact-links a {
+  color: var(--primary-text);
+  text-decoration: none;
+  padding: 10px 18px;
+  margin: 5px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+.contact-links a:hover {
+  background: rgba(255,255,255,0.4);
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.7);
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+footer {
+  margin-top: auto;
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
+      --tw-border-style: solid;
+    }
+  }
+}
